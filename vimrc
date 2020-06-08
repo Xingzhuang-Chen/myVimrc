@@ -7,7 +7,11 @@ set rtp+=~/.vim/bundle/Vundle.vim " 将Vundle路径添加到运行路径，用�
 call vundle#begin() " 初始化Vundle
 Plugin 'VundleVim/Vundle.vim' " 导入Vundle包
 Plugin 'tpope/vim-commentary'
-
+Plugin 'kana/vim-textobj-entire'
+Plugin 'yianwillis/vimcdoc'
+Plugin 'kana/vim-textobj-user'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-surround'
 
 call vundle#end()
 filetype plugin indent on " 恢复文件类型检测
