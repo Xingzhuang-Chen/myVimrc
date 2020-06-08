@@ -6,6 +6,8 @@ filetype off " 不检测文件类型，Vundle需求
 set rtp+=~/.vim/bundle/Vundle.vim " 将Vundle路径添加到运行路径，用于初始化Vundle
 call vundle#begin() " 初始化Vundle
 Plugin 'VundleVim/Vundle.vim' " 导入Vundle包
+Plugin 'tpope/vim-commentary'
+
 
 call vundle#end()
 filetype plugin indent on " 恢复文件类型检测
