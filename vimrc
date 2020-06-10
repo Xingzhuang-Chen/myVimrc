@@ -1,4 +1,3 @@
-echo 'load my vimrc.'
 set nocompatible " 不使用vi兼容模式，启用vim高级特性
 
 " Vundle
@@ -18,7 +17,6 @@ filetype plugin indent on " 恢复文件类型检测
 " end Vundle
 
 " 基本设置 ---{{{
-echo '>^.^<'
 set showmatch " 括号配对时，提示正括号位置
 set matchtime=10 " 配对括号提示时间，0.1s为单位
 set number " 显示行号
