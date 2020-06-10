@@ -56,6 +56,7 @@ vnoremap <down> <nop>
 
 " 快速<esc> ---{{{
 inoremap jk <esc>
+inoremap <esc> <nop>
 " :inoremap <esc> <nop>
 " }}}--- 快速<esc>
 
