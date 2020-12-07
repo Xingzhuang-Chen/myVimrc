@@ -1,3 +1,4 @@
+echom "欢迎使用星壮的超难用编辑器"
 set nocompatible " 不使用vi兼容模式，启用vim高级特性
 
 " Vundle
