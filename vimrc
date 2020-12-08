@@ -12,6 +12,7 @@ Plugin 'yianwillis/vimcdoc'
 Plugin 'kana/vim-textobj-user'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
+Plugin 'python-mode/python-mode'
 
 call vundle#end()
 filetype plugin indent on " 恢复文件类型检测
@@ -19,6 +20,7 @@ filetype plugin indent on " 恢复文件类型检测
 
 " 基本设置 ---{{{
 set showmatch " 括号配对时，提示正括号位置
+set matchpairs+=<:>
 set matchtime=10 " 配对括号提示时间，0.1s为单位
 set number " 显示行号
 set relativenumber " 显示相对行号
@@ -31,8 +33,10 @@ nohlsearch
 " }}}--- 基本设置
 
 " 缩进相关配置 ---{{{
+set wrap
 set smartindent
 set tabstop=4
+set shiftround
 set shiftwidth=4
 set expandtab
 set softtabstop=4
@@ -67,4 +71,7 @@ set statusline+=/
 set statusline+=%L
 " }}}--- 状态条
 
-
+nnoremap <C-j> -
+nnoremap <C-k> +
+nnoremap _ kddpk
+nnoremap - ddp
