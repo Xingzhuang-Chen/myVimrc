@@ -1,3 +1,4 @@
+echom "欢迎使用星壮的超难用编辑器"
 set nocompatible " 不使用vi兼容模式，启用vim高级特性
 
 " Vundle
@@ -77,6 +78,7 @@ let mapleader=','
 nnoremap <leader>V :e $MYVIMRC<cr>
 " 基本设置 ---{{{
 set showmatch " 括号配对时，提示正括号位置
+set matchpairs+=<:>
 set matchtime=10 " 配对括号提示时间，0.1s为单位
 set number " 显示行号
 set relativenumber " 显示相对行号
@@ -91,6 +93,7 @@ nohlsearch
 " 缩进相关配置 ---{{{
 set smartindent
 set tabstop=4
+set shiftround
 set shiftwidth=4
 set expandtab
 set softtabstop=4
@@ -137,3 +140,8 @@ hi IndentGuidesEven ctermbg=darkgrey
 
 let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
 let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
+
+nnoremap <C-j> -
+nnoremap <C-k> +
+nnoremap _ kddpk
+nnoremap - ddp
