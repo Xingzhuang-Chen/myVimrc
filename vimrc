@@ -2,20 +2,79 @@ set nocompatible " 不使用vi兼容模式，启用vim高级特性
 
 " Vundle
 filetype off " 不检测文件类型，Vundle需求
-set rtp+=~/.vim/bundle/Vundle.vim " 将Vundle路径添加到运行路径，用于初始化Vundle
-call vundle#begin() " 初始化Vundle
-Plugin 'VundleVim/Vundle.vim' " 导入Vundle包
-Plugin 'tpope/vim-commentary'
-Plugin 'kana/vim-textobj-entire'
-Plugin 'yianwillis/vimcdoc'
-Plugin 'kana/vim-textobj-user'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-surround'
+"set rtp+=~/.vim/bundle/Vundle.vim " 将Vundle路径添加到运行路径，用于初始化Vundle
+call plug#begin() " 初始化Vundle
+"Plug 'VundleVim/Vundle.vim' " 导入Vundle包
+Plug 'tpope/vim-commentary'
+Plug 'kana/vim-textobj-entire'
+Plug 'yianwillis/vimcdoc'
+Plug 'kana/vim-textobj-user'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py' }
 
-call vundle#end()
+" NerdTree
+" Why nerdtree? 
+" - Better community.
+" - BookMark
+" Plug 'preservim/nerdtree'
+
+" defx
+" Why defx?
+" - Faster
+" - Muitiselect
+if has('nvim')
+    Plug 'Shougo/defx.nvim', {'do':':UpdateRemotePlugins'}
+else
+    Plug 'Shougo/defx.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'kristijanhusak/defx-icons'
+Plug 'kristijanhusak/defx-git'
+
+" vim-airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" denite.nvim
+if has('nvim')
+    Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/denite.nvim'
+    " Plug 'roxma/nvim-yarp'
+    " Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
+" undotree
+" 记录文件的每一次修改
+Plug 'mbbill/undotree'
+
+" tagbar
+" 展示文件中的标签
+Plug 'preservim/tagbar'
+
+" ale
+" 语法检查
+Plug 'dense-analysis/ale'
+
+" 缩进可视化
+Plug 'nathanaelkane/vim-indent-guides' 
+
+" 当前单词下划线
+Plug 'itchyny/vim-cursorword' 
+
+" test
+Plug '~/.vim/plugged/test.vim'
+
+call plug#end()
 filetype plugin indent on " 恢复文件类型检测
 " end Vundle
 
+" 使用24位真彩色
+set t_Co=16777216
+let mapleader=','
+nnoremap <leader>V :e $MYVIMRC<cr>
 " 基本设置 ---{{{
 set showmatch " 括号配对时，提示正括号位置
 set matchtime=10 " 配对括号提示时间，0.1s为单位
@@ -64,6 +123,17 @@ set statusline+=%=
 set statusline+=%l
 set statusline+=/
 set statusline+=%L
+set laststatus=2
 " }}}--- 状态条
 
 
+" YouCompleteMe
+let g:ycm_key_invoke_completion='<c-f>'
+
+set pastetoggle=<C-p>
+
+hi IndentGuidesOdd ctermbg=black 
+hi IndentGuidesEven ctermbg=darkgrey
+
+let $NVIM_PYTHON_LOG_FILE="/tmp/nvim_log"
+let $NVIM_PYTHON_LOG_LEVEL="DEBUG"
