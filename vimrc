@@ -40,7 +40,8 @@ Plug 'francoiscabrol/ranger.vim'
 " - Faster
 " - Muitiselect
 if has('nvim')
-    Plug 'Shougo/defx.nvim', {'do':':UpdateRemotePlugins'}
+    " Plug 'Shougo/defx.nvim', {'do':':UpdateRemotePlugins'}
+    Plug 'Xingzhuang-Chen/defx.nvim', {'do':':UpdateRemotePlugins'}
 else
     Plug 'Shougo/defx.nvim'
     Plug 'roxma/nvim-yarp'

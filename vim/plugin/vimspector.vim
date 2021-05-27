@@ -27,9 +27,13 @@ let g:vimspector_sign_priority = {
 " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
 
 " for normal mode - the word under the cursor
-nnoremap <Leader>di <Plug>VimspectorBalloonEval
+" nnoremap <silent> <Leader>dp <Plug>VimspectorBalloonEval
+nnoremap <silent> <Leader>dp
+      \ :<c-u>call vimspector#ShowEvalBalloon( 0 )<CR>
 " for visual mode, the visually selected text
-xnoremap <Leader>di <Plug>VimspectorBalloonEval
+" xnoremap <silent> <Leader>dp <Plug>VimspectorBalloonEval
+xnoremap <silent> <Leader>dp
+      \ :<c-u>call vimspector#ShowEvalBalloon( 1 )<CR>
 
 " 关闭调试
 nnoremap <F2> :VimspectorReset<cr>
@@ -37,4 +41,7 @@ nnoremap <F2> :VimspectorReset<cr>
 " watch
 nnoremap <Leader>dw :VimspectorWatch 
 " Eval
-nnoremap <Leader>dw :VimspectorEval 
+nnoremap <Leader>de :VimspectorEval 
+
+sign define vimspectorPC         text=\  texthl=MatchParen linehl=CursorLine
+sign define vimspectorPCBP       text=\  texthl=MatchParen linehl=CursorLine
