@@ -1,4 +1,3 @@
-echo "~愿每一秒都能为未来填上一坑，排掉一患~"
 set nocompatible " 不使用vi兼容模式，启用vim高级特性
 
 "
