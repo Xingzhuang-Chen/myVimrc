@@ -96,6 +96,8 @@ endif
 Plug 'xolox/vim-session'
 Plug 'xolox/vim-misc'
 
+Plug 'terryma/vim-expand-region'
+
 " test
 Plug '~/.vim/plugged/test.vim'
 
